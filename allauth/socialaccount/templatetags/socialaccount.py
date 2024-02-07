@@ -75,6 +75,7 @@ def get_providers(context):
     a list of social providers configured for the current site.
     """
     print(context, "contexto")
+    print(context["request"])
     request = context["request"]
     adapter = get_adapter()
     print(adapter, "adaptador")
