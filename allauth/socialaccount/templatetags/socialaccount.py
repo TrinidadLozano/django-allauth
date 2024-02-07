@@ -77,10 +77,15 @@ def get_providers(context):
     print(context, "contexto")
     print(context["request"])
     request = context["request"]
-    adapter = get_adapter()
-    print(adapter, "adaptador")
-    providers = adapter.list_providers(request)
-    print(providers, "providers")
-    sorted1 = sorted(providers, key=lambda p: p.name)
-    print(sorted1, "sorted")
-    return sorted1
+    if request:
+        adapter = get_adapter()
+        print(adapter, "adaptador")
+        providers = adapter.list_providers(request)
+        print(providers, "providers")
+        sorted1 = sorted(providers, key=lambda p: p.name)
+        print(sorted1, "sorted")
+        return sorted1
+    else:
+        print("No provider")
+        return []
+
