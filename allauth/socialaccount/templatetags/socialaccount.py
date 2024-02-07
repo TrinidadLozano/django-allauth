@@ -74,7 +74,12 @@ def get_providers(context):
     Then within the template context, `socialaccount_providers` will hold
     a list of social providers configured for the current site.
     """
+    print(context, "contexto")
     request = context["request"]
     adapter = get_adapter()
+    print(adapter, "adaptador")
     providers = adapter.list_providers(request)
-    return sorted(providers, key=lambda p: p.name)
+    print(providers, "providers")
+    sorted1 = sorted(providers, key=lambda p: p.name)
+    print(sorted1, "sorted")
+    return sorted1
